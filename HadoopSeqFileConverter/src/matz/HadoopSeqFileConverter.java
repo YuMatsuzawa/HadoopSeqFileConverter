@@ -11,6 +11,13 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.SequenceFile;
 import org.apache.hadoop.io.Text;
 
+/**東工大鈴村研から頂いたフォロワーネットワークデータ(元はHadoopSeqFile)を可読テキストにした上でGzip圧縮して出力するクラス。<br>
+ * Note:Hadoop上で扱うならば、元ファイルのままが最も効率がいいことに注意。SeqFileは圧縮済みかつ分割処理可能だが、Gzipは分割処理不可能なのでHadoopには不向き。<br>
+ * Note2:ビルド時に必須ライブラリを同梱しない仕様に変えたので、使用時には適当にクラスパスを指定すること。従って、Hadoopインストール済みのノード＝hdpgw上で作業すること。<br>
+ * ぶっちゃけあんまりどう使ったか覚えていない。(2014/07/08)
+ * @author Matsuzawa
+ *
+ */
 public class HadoopSeqFileConverter {
 
 	private static final String bra = "{";
