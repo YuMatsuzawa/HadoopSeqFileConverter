@@ -3,5 +3,19 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Hadoop-0.20.2-cdh3u5"/>
+	<classpathentry kind="lib" path="/Hadoop-0.20.2-cdh3u5/hadoop-0.20.2-cdh3u5/lib/jackson-core-asl-1.5.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://jackson.codehaus.org/1.5.2/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Hadoop-0.20.2-cdh3u5/hadoop-0.20.2-cdh3u5/lib/jackson-mapper-asl-1.5.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://jackson.codehaus.org/1.5.2/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/twitter4j-4.0.2/lib/twitter4j-async-4.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/twitter4j-4.0.2/lib/twitter4j-core-4.0.2.jar" sourcepath="lib/twitter4j-4.0.2/twitter4j-core/src"/>
+	<classpathentry kind="lib" path="lib/twitter4j-4.0.2/lib/twitter4j-media-support-4.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/twitter4j-4.0.2/lib/twitter4j-stream-4.0.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

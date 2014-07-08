@@ -11,6 +11,7 @@
         </sealing>
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <folder path="/HadoopSeqFileConverter/lib"/>
         <javaElement handleIdentifier="=HadoopSeqFileConverter/src"/>
     </selectedElements>
 </jardesc>
