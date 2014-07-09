@@ -18,6 +18,7 @@ import org.apache.hadoop.io.SequenceFile;
 import org.apache.hadoop.io.SequenceFile.CompressionType;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.compress.DefaultCodec;
+import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.ObjectMapper;
 
 /**MS392テキストのBzip2圧縮という形式で集めたログファイルを、SeqFileに変換するクラス。<br>
@@ -96,8 +97,10 @@ public class ConvertToSeq {
 					while(!Thread.interrupted() && (line = br.readLine())!=null) {
 						if (line.isEmpty()) continue;
 						count++;
-						//JSON内にある、エスケープシーケンスと関係ない半角バックスラッシュの手前に、エスケープを挿入する。これをしないとJSONパース時に不正なエスケープシーケンスとしてエラー。
-						line = line.replaceAll("\\\\([^bfnrtu\"\\/])", "\\\\\\\\\\1");
+						//手前に半角バックスラッシュが存在することによりダブルクオーテーションが意図せずエスケープされてしまっている部分の対処。
+						line = line.replaceAll("\\\",", "\\\\\",");
+						//エスケープシーケンスと関係ない半角バックスラッシュを全角バックスラッシュに変換する。これをしないとJSONパース時に不正なエスケープシーケンスとしてエラー。
+						line = line.replaceAll("\\\\([^bfnrtu\"\\/])", " ￥\\1");
 						try {
 							//Twitter4jのJSONパーサーとStatusクラスを使ってもいいが、deprecatedなのと、遅い。上記エスケープシーケンスのエラーは同じように出るので、同じ仕様に従っているとわかる。
 //							status = DataObjectFactory.createStatus(line);
@@ -108,9 +111,10 @@ public class ConvertToSeq {
 							key.set(Long.parseLong(status.get("id").toString()));
 							val.set(line);
 							seqfw.append(key, val);
-//							if (count % 1000 == 0) System.out.println(count+" tweets done.");
-						} catch (Exception e){
+							if (count % 10000 == 0) System.out.println(count+" tweets done.");
+						} catch (JsonParseException e){
 							e.printStackTrace();
+							System.out.println(line);
 							continue;
 						}
 					}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project HadoopSeqFileConverter with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="//STR33/laboshare/data/scripts/ConvertToSeq.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="matz.ConvertToSeq"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ jackson-core-asl-1.0.1.jar jackson-mapper-asl-1.0.1.jar hadoop-capacity-scheduler-0.20.2-cdh3u5.jar hadoop-datajoin-0.20.2-cdh3u5.jar hadoop-failmon-0.20.2-cdh3u5.jar hadoop-fairscheduler-0.20.2-cdh3u5.jar jackson-core-asl-1.0.1.jar jackson-mapper-asl-1.0.1.jar hadoop-gridmix-0.20.2-cdh3u5.jar hdfsproxy-2.0.jar lucene-core-2.3.1.jar hadoop-index-0.20.2-cdh3u5.jar hadoop-mrunit-0.20.2-cdh3u5.jar jackson-core-asl-1.0.1.jar jackson-mapper-asl-1.0.1.jar hadoop-streaming-0.20.2-cdh3u5.jar hadoop-thriftfs-0.20.2-cdh3u5.jar hadoop-vaidya-0.20.2-cdh3u5.jar ivy-2.0.0-rc2.jar ant-contrib-1.0b3.jar asm-3.2.jar aspectjrt-1.6.5.jar aspectjtools-1.6.5.jar commons-cli-1.2.jar commons-codec-1.4.jar commons-daemon-1.0.1.jar commons-el-1.0.jar commons-httpclient-3.1.jar commons-io-2.1.jar commons-lang-2.4.jar commons-logging-1.0.4.jar commons-logging-api-1.0.4.jar commons-net-3.1.jar core-3.1.1.jar guava-r09-jarjar.jar hadoop-fairscheduler-0.20.2-cdh3u5.jar hsqldb-1.8.0.10.jar jackson-core-asl-1.5.2.jar jackson-mapper-asl-1.5.2.jar jasper-compiler-5.5.12.jar jasper-runtime-5.5.12.jar jersey-core-1.8.jar jersey-json-1.8.jar jersey-server-1.8.jar jets3t-0.6.1.jar jetty-6.1.26.cloudera.1.jar jetty-servlet-tester-6.1.26.cloudera.1.jar jetty-util-6.1.26.cloudera.1.jar jsch-0.1.42.jar junit-4.5.jar kfs-0.2.2.jar log4j-1.2.15.jar mockito-all-1.8.2.jar oro-2.0.8.jar servlet-api-2.5-20081211.jar servlet-api-2.5-6.1.14.jar slf4j-api-1.4.3.jar slf4j-log4j12-1.4.3.jar xmlenc-0.52.jar pyAntTasks-1.3.jar hadoopthriftapi.jar libthrift.jar hadoop-ant-0.20.2-cdh3u5.jar hadoop-core-0.20.2-cdh3u5.jar hadoop-examples-0.20.2-cdh3u5.jar hadoop-test-0.20.2-cdh3u5.jar hadoop-tools-0.20.2-cdh3u5.jar jsp-2.1.jar jsp-api-2.1.jar twitter4j-async-4.0.2.jar twitter4j-core-4.0.2.jar twitter4j-media-support-4.0.2.jar twitter4j-stream-4.0.2.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <fileset dir="C:/Users/Matsuzawa/git/HadoopSeqFileConverter/HadoopSeqFileConverter/bin"/>
+            <fileset dir="C:/Users/Matsuzawa/workspace/Hadoop-0.20.2-cdh3u5/bin"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\capacity-scheduler\lib" includes="jackson-core-asl-1.0.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\capacity-scheduler\lib" includes="jackson-mapper-asl-1.0.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\capacity-scheduler" includes="hadoop-capacity-scheduler-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\datajoin" includes="hadoop-datajoin-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\failmon" includes="hadoop-failmon-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\fairscheduler" includes="hadoop-fairscheduler-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\gridmix\lib" includes="jackson-core-asl-1.0.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\gridmix\lib" includes="jackson-mapper-asl-1.0.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\gridmix" includes="hadoop-gridmix-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\hdfsproxy" includes="hdfsproxy-2.0.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\index\lib" includes="lucene-core-2.3.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\index" includes="hadoop-index-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\mrunit" includes="hadoop-mrunit-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\streaming\lib" includes="jackson-core-asl-1.0.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\streaming\lib" includes="jackson-mapper-asl-1.0.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\streaming" includes="hadoop-streaming-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\thriftfs" includes="hadoop-thriftfs-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\contrib\vaidya" includes="hadoop-vaidya-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\ivy" includes="ivy-2.0.0-rc2.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="ant-contrib-1.0b3.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="asm-3.2.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="aspectjrt-1.6.5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="aspectjtools-1.6.5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="commons-cli-1.2.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="commons-codec-1.4.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="commons-daemon-1.0.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="commons-el-1.0.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="commons-httpclient-3.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="commons-io-2.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="commons-lang-2.4.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="commons-logging-1.0.4.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="commons-logging-api-1.0.4.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="commons-net-3.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="core-3.1.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="guava-r09-jarjar.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="hadoop-fairscheduler-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="hsqldb-1.8.0.10.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="jackson-core-asl-1.5.2.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="jackson-mapper-asl-1.5.2.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="jasper-compiler-5.5.12.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="jasper-runtime-5.5.12.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="jersey-core-1.8.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="jersey-json-1.8.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="jersey-server-1.8.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="jets3t-0.6.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="jetty-6.1.26.cloudera.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="jetty-servlet-tester-6.1.26.cloudera.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="jetty-util-6.1.26.cloudera.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="jsch-0.1.42.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="junit-4.5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="kfs-0.2.2.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="log4j-1.2.15.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="mockito-all-1.8.2.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="oro-2.0.8.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="servlet-api-2.5-20081211.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="servlet-api-2.5-6.1.14.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="slf4j-api-1.4.3.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="slf4j-log4j12-1.4.3.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib" includes="xmlenc-0.52.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\src\contrib\cloud\lib" includes="pyAntTasks-1.3.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\src\contrib\thriftfs\lib" includes="hadoopthriftapi.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\src\contrib\thriftfs\lib" includes="libthrift.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5" includes="hadoop-ant-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5" includes="hadoop-core-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5" includes="hadoop-examples-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5" includes="hadoop-test-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5" includes="hadoop-tools-0.20.2-cdh3u5.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib\jsp-2.1" includes="jsp-2.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\workspace\Hadoop-0.20.2-cdh3u5\hadoop-0.20.2-cdh3u5\lib\jsp-2.1" includes="jsp-api-2.1.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\git\HadoopSeqFileConverter\HadoopSeqFileConverter\lib\twitter4j-4.0.2\lib" includes="twitter4j-async-4.0.2.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\git\HadoopSeqFileConverter\HadoopSeqFileConverter\lib\twitter4j-4.0.2\lib" includes="twitter4j-core-4.0.2.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\git\HadoopSeqFileConverter\HadoopSeqFileConverter\lib\twitter4j-4.0.2\lib" includes="twitter4j-media-support-4.0.2.jar"/>
+            <zipfileset dir="C:\Users\Matsuzawa\git\HadoopSeqFileConverter\HadoopSeqFileConverter\lib\twitter4j-4.0.2\lib" includes="twitter4j-stream-4.0.2.jar"/>
+        </jar>
+    </target>
+</project>
