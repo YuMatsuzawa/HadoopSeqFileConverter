@@ -89,7 +89,7 @@ public class ConvertToSeq {
 									new GZIPInputStream(
 											new FileInputStream(this.inputFile)),"windows-31j"));
 					
-					String line = null;
+					String line = null, replaced = null;
 					ObjectMapper mapper = new ObjectMapper();
 					Map<String, Object> status = null;
 //					Status status = null;
@@ -97,24 +97,40 @@ public class ConvertToSeq {
 					while(!Thread.interrupted() && (line = br.readLine())!=null) {
 						if (line.isEmpty()) continue;
 						count++;
-						//手前に半角バックスラッシュが存在することによりダブルクオーテーションが意図せずエスケープされてしまっている部分の対処。
-						line = line.replaceAll("\\\",", "\\\\\",");
+
+						replaced = line;
 						//エスケープシーケンスと関係ない半角バックスラッシュを全角バックスラッシュに変換する。これをしないとJSONパース時に不正なエスケープシーケンスとしてエラー。
-						line = line.replaceAll("\\\\([^bfnrtu\"\\/])", " ￥\\1");
+//						replaced = line.replaceAll("\\([^bfnrtu\"\\/])", "\1");
+						//手前に半角バックスラッシュが存在することによりダブルクオーテーションが意図せずエスケープされてしまっている部分の対処。
+//						replaced = line.replaceAll("\\\\[\"],[\"]", "\",\"");
+						
+						/* Regexによる不正エスケープ文字の対処にはかなり限界があるとわかったので、上記の処理は省略する。
+						 * 要はJSONの公式仕様に基づきパースしようとすると問題があるだけで、文字列としては問題なく読めているので、
+						 * パースに失敗した場合はkey(ユーザID)を0としてvalに元の（replaceしていない）文字列をそのまま出力する。
+						 */
+						
 						try {
 							//Twitter4jのJSONパーサーとStatusクラスを使ってもいいが、deprecatedなのと、遅い。上記エスケープシーケンスのエラーは同じように出るので、同じ仕様に従っているとわかる。
+							//TwitterObjectFactoryというのが後継クラスらしい。
 //							status = DataObjectFactory.createStatus(line);
 //							key.set(status.getId());
 							
 							//JacksonJSONパーサーでJSONの中身をmapに読み込む。総称の指定がわからないのでWARNは放置。こっちのほうが相当速い。
-							status = mapper.readValue(line, Map.class);
+							status = mapper.readValue(replaced, Map.class);
 							key.set(Long.parseLong(status.get("id").toString()));
-							val.set(line);
+							val.set(replaced);
 							seqfw.append(key, val);
 							if (count % 10000 == 0) System.out.println(count+" tweets done.");
 						} catch (JsonParseException e){
-							e.printStackTrace();
-							System.out.println(line);
+//							e.printStackTrace();
+//							System.out.println(line);
+//							System.out.println(">>>>>>");
+//							System.out.println(replaced);
+							
+							key.set(0);
+							val.set(line);
+							seqfw.append(key, val);
+							if (count % 10000 == 0) System.out.println(count+" tweets done.");
 							continue;
 						}
 					}
