@@ -27,7 +27,6 @@ import org.codehaus.jackson.map.ObjectMapper;
  * @author Matsuzawa
  *
  */
-@SuppressWarnings("deprecation")
 public class ConvertToSeq {
 
 	/**
@@ -66,6 +65,7 @@ public class ConvertToSeq {
 			this.outputPath = outputPath;
 		}
 
+		@SuppressWarnings("unchecked")
 		@Override
 		public void run() {
 			try {
